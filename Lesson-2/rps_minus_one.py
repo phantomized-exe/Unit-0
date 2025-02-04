@@ -90,7 +90,7 @@ def rps_minus_one():
             #print("Invalid choice.")
             #continue
         cont_game = int(input("Continue game?\n1. Yes\n2. No "))
-        if cont_game == 2:
+        if cont_game != 1:
             continue_game = False
             return f"Player score: {player_score}\nComputer score: {comp_score}"
         else:
