@@ -86,7 +86,7 @@ def rps_minus_one():
                 print("The computer wins because scissors cuts paper.")
                 comp_score += 1
         try:
-            continue_game = input("Continue game?\n1. Yes\n2. No ")
+            continue_game = int(input("Continue game?\n1. Yes\n2. No "))
             if continue_game == 2:
                 return f"Player score: {player_score}\nComputer score: {comp_score}"
             else:
