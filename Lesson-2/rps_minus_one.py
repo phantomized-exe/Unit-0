@@ -51,11 +51,10 @@ def rps_minus_one():
         print(f"The computer's hands are {comp_hand[0]} and {comp_hand[1]}. Your hands are {player_hand[0]} and {player_hand[1]}.")
         try:
             remove_hand = int(input(f"Choose hand to remove:\n1. {player_hand[0]}\n2. {player_hand[1]} "))
-            player_hand.remove(player_hand[remove_hand-1])
         except ValueError:
             print("Invalid choice.")
             continue
-        print("test")
+            player_hand.remove(player_hand[remove_hand-1])
         comp_num = random.randint(0,1)
         comp_hand.remove(comp_hand[comp_num])
         if comp_hand[0] == "rock":
@@ -85,15 +84,17 @@ def rps_minus_one():
             else:
                 print("The computer wins because scissors cuts paper.")
                 comp_score += 1
-        try:
-            continue_game = int(input("Continue game?\n1. Yes\n2. No "))
-            if continue_game == 2:
-                return f"Player score: {player_score}\nComputer score: {comp_score}"
-            else:
-                continue_game = True
-                continue
-        except ValueError:
-            print("Invalid choice.")
+        #try:
+            #cont_game = int(input("Continue game?\n1. Yes\n2. No "))
+        #except ValueError:
+            #print("Invalid choice.")
+            #continue
+        cont_game = int(input("Continue game?\n1. Yes\n2. No "))
+        if cont_game == 2:
+            continue_game = False
+            return f"Player score: {player_score}\nComputer score: {comp_score}"
+        else:
+            continue_game = True
             continue
 
 print(rps_minus_one())
