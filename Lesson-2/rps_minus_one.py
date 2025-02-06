@@ -55,6 +55,8 @@ def rps_minus_one():
             print("Invalid choice.")
             continue
             player_hand.remove(player_hand[remove_hand-1])
+        remove_hand -= 1
+        player_hand.remove(player_hand[remove_hand])
         comp_num = random.randint(0,1)
         comp_hand.remove(comp_hand[comp_num])
         if comp_hand[0] == "rock":
