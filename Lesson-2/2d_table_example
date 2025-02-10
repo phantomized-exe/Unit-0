@@ -17,7 +17,7 @@ continents = [
 
 print("         Year  1750  1800  1850  1900  1950  2000  2050")
 for i in range(len(population)):
-    print(continents[i-1],end=" ")
-    for j in range(len(continents)):
-        print(f"{population[i][j-1]:5d}",end=" ")
+    print(continents[i],end=" ")
+    for j in range(len(continents)+1):
+        print(f"{population[i][j]:5d}",end=" ")
     print()
