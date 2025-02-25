@@ -9,6 +9,18 @@ def main():
     if postal_code[0].upper() not in "ABCEGHJKLMNPRSTVXY" or len(postal_code) != 6:
         print("Invalid postal code")
         main()
+    is_num = False
+    for i in range(6):
+        if is_num:
+            if postal_code[i].upper() not in "0123456789":
+                print("Invalid postal code")
+                main()
+            is_num = False
+        else:
+            if postal_code[i].upper() not in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+                print("Invalid postal code")
+                main()
+            is_num = True
     for i in provinces.keys():
         if postal_code[0].upper() == i:
             if postal_code[1] == 0:
