@@ -6,22 +6,23 @@ def main():
     "V":"British Columbia","X":"Nunavut or Northwest Territories","Y":"Yukon"
     }
     postal_code = input("Enter Canadian postal code: ")
-    if postal_code[0].upper() not in "ABCEGHJKLMNPRSTVXY" or len(postal_code) != 7:
+    if postal_code[0] not in "ABCEGHJKLMNPRSTVXYabcdefghijklmnopqrstuvwxyz0123456789 " or len(postal_code) != 7:
+        print("Invalid postal code")
+        main()
+    if postal_code[3] != " ":
         print("Invalid postal code")
         main()
     is_num = False
-    for i in range(6):
-        if i == 3:
-            if postal_code[i] != " ":
-                print("Invalid postal code")
-                main()
+    for i in range(7):
+        if postal_code[i] == " ":
+            continue
         if is_num:
             if postal_code[i] not in "0123456789":
                 print("Invalid postal code")
                 main()
             is_num = False
         else:
-            if postal_code[i].upper() not in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+            if postal_code[i] not in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz":
                 print("Invalid postal code")
                 main()
             is_num = True
